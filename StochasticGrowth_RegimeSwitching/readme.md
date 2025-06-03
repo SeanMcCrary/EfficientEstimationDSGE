@@ -25,13 +25,7 @@ This repository contains MATLAB code for a **stochastic growth model** with **re
 
 ## Requirements
 
-- MATLAB (R2021a or later recommended)
+- MATLAB (we use 2024a) 
 - Symbolic Math Toolbox
 - Statistics and Machine Learning Toolbox (for `mvnpdf` and `dtmc`)
 
-## Getting Started
-
-To run the demo:
-
-```matlab
->> demo
