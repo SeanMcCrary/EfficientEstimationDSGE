@@ -25,7 +25,7 @@ This repository contains MATLAB code for full-information Bayesian estimation of
 - `tpfilter_zlb.m`, `nk_zlb_tpcoef.m`  
   Functions used to filter the data and compute policy function coefficients via the Newton solver.
 
-- `Rez_eval_zlb.m`, `Jac_eval_zlb.m`  
+- `Res_eval_zlb.m`, `Jac_eval_zlb.m`  
   Functions called by the Newton solver to evaluate residuals and Jacobians for the policy coefficients.
 
 - `NomR_zlb.m`, `NomR_dx_zlb.m`  
