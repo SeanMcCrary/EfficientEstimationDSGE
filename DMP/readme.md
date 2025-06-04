@@ -5,7 +5,6 @@ This repository contains MATLAB code to compare our proposed **Time-Varying Kalm
 1. Extended Kalman Filter (EKF)  
 2. Log-linear solution and Kalman Filter (KF)  
 3. Particle Filter (PF)  
-4. Time-Varying Kalman Filter (TV-KF)
 
 ## Overview
 
