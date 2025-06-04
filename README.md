@@ -34,16 +34,14 @@ MATLAB code for estimating the **standard three-equation New Keynesian model**.
 ### [`/StochasticGrowth_AR1SV`](./tree/main/StochasticGrowth_AR1SV)
 MATLAB code for a **stochastic growth model with AR(1) productivity** and **stochastic volatility**.
 
-- Demonstrates how to implement the filtering procedure  
-- Not a full-information estimation setup
+- Demonstrates how to implement the filtering procedure when the volatility of productivity follows an AR(1) process
 
 ---
 
 ### [`/StochasticGrowth_RegimeSwitching`](./tree/main/StochasticGrowth_RegimeSwitching)
 MATLAB code for a **stochastic growth model with regime-switching volatility**.
 
-- Demonstrates the filtering procedure under discrete regime changes  
-- Does not perform full-information Bayesian estimation
+- Demonstrates the filtering procedure when productivity dynamics are determined by a discrete Markov process
 
 ---
 
@@ -57,6 +55,9 @@ MATLAB code for a **stochastic growth model with regime-switching volatility**.
 
 ## 🔍 Contact
 
-For questions, suggestions, or collaborations, feel free to open an [issue](https://github.com/SeanMcCrary/EfficientEstimationDSGE/issues) or reach out via GitHub.
+This is a work in progress. Code will be updated periodically.  
+For questions, suggestions, or concerns, feel free to reach out:  
+**mccrary.65 `at` osu.edu**
+
 
 ---
