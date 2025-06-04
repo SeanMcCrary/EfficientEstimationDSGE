@@ -25,19 +25,18 @@ MATLAB code for full-information Bayesian estimation of the **New Keynesian Diam
 ---
 
 ### [DMP](DMP)
-MATLAB code for estimating the **Diamond-Mortensen-Pissarises (DMP)** model.
+MATLAB code for estimating the **Diamond-Mortensen-Pissarides (DMP)** model.
 
-- Data simulated from the global solution is used as the data-generating process  
-- Benchmarks computational times of existing filters  
-- Estimation uses a Random-Walk Metropolis-Hastings algorithm
-
+- Uses data simulated from the global solution as the data-generating process  
+- Benchmarks the computational performance of existing filters
+  
 ---
 
 ### [TextbookNewKeynesian](TextbookNewKeynesian)
 MATLAB code for estimating the **standard three-equation New Keynesian model**.
 
-- Implements textbook specification  
-- Full-information Bayesian estimation
+- Solves the textbook three-equation New Keynesian model  
+- Full-information Bayesian estimation using data from 1966:Q1 to 2007:Q4 
 
 ---
 
