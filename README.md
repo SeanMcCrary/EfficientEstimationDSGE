@@ -1,6 +1,16 @@
 # EfficientEstimationDSGE
 
-This repository contains MATLAB code for efficient estimation and filtering of various DSGE models. The models span labor market search, New Keynesian dynamics, and stochastic growth. Each subdirectory implements a specific model with its own estimation or filtering routine.
+This repository contains MATLAB code accompanying the paper  
+**"Efficient Estimation of Nonlinear DSGE Models"**  
+by *Eva Janssens* and *Sean McCrary*.
+
+Each subdirectory implements a specific model with its own estimation or filtering routine. The general structure of the filtering procedure alternates between:
+
+1. **Solution Step**: Solves the model locally at the current state forecast.
+2. **Filtering Step**: Constructs state-space matrices consistent with the current local solution and performs a single step of the time-varying Kalman filter.
+
+Each subdirectory contains a dedicated `README.md` with details on the model, data, and estimation or filtering demonstration.
+
 
 ## 📁 Contents
 
