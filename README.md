@@ -56,8 +56,7 @@ MATLAB code for a **stochastic growth model with regime-switching volatility**.
 ## 🔍 Contact
 
 This is a work in progress. Code will be updated periodically.  
-For questions, suggestions, or concerns, feel free to reach out:  
-**mccrary.65 `at` osu.edu**
+For questions, suggestions, or concerns, feel free to reach out: mccrary.65 `at` osu.edu**
 
 
 ---
