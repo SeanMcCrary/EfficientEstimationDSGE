@@ -18,7 +18,7 @@ MATLAB code for full-information Bayesian estimation of the **New Keynesian Diam
 MATLAB code for estimating the **Diamond-Mortensen-Pissarides (DMP)** model.
 
 - Data simulated from the global solution is used as the data-generating process  
-- Filters are benchmarked against the true latent state  
+- Benchamrks computational times of existing filters 
 - Estimation uses a Random-Walk Metropolis-Hastings algorithm
 
 ---
