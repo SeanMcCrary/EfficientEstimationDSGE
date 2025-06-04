@@ -33,7 +33,7 @@ This repository contains MATLAB code for full-information Bayesian estimation of
 
 - `nkdmp_zlb_symbolic_equations.m`  
   Symbolic script that constructs the model's equilibrium conditions and generates the functions:  
-  `Rez_eval_zlb.m`, `Jac_eval_zlb.m`, `NomR_zlb.m`, and `NomR_dx_zlb.m`.
+  `Res_eval_zlb.m`, `Jac_eval_zlb.m`, `NomR_zlb.m`, and `NomR_dx_zlb.m`.
 
 - `transformParamsInvME.m`, `transformParamsME.m`  
   Functions for mapping between parameter vectors and structural parameters, enforcing constraints such as positivity of variances.
