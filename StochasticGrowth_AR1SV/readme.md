@@ -1,6 +1,6 @@
 # Stochastic Growth Model with Stochastic Volatility
 
-This repository contains MATLAB code for a **stochastic growth model** with **stochastic volatility** in productivity. The model is solved using Taylor projection and estimated using two filtering approaches:
+This repository contains MATLAB code for a **stochastic growth model** with **stochastic volatility** in productivity. The model is solved using Taylor projection and two filtering approaches are presented:
 
 1. Extended Kalman Filter (EKF)  
 2. Discretized filter for latent volatility
