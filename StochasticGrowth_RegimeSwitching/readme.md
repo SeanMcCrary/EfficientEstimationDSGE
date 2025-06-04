@@ -25,6 +25,6 @@ This repository contains MATLAB code for a **stochastic growth model** with **re
 
 ## Requirements
 
-- MATLAB (we use 2024a) 
+- MATLAB (tested in 2024a) 
 - Symbolic Math Toolbox
 - Statistics and Machine Learning Toolbox
