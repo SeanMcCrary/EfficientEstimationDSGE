@@ -22,9 +22,6 @@
 
 clear; close all; clc;
 
-script_dir = fileparts(mfilename('fullpath'));
-addpath(fullfile(script_dir,'helpers'));
-
 %% User choices
 
 Tsim = 200;
