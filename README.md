@@ -40,13 +40,6 @@ MATLAB code for estimating the **standard three-equation New Keynesian model**.
 
 ---
 
-### [StochasticGrowth_AR1SV](StochasticGrowth_AR1SV)
-MATLAB code for a **stochastic growth model with AR(1) productivity** and **stochastic volatility**.
-
-- Demonstrates how to implement the filtering procedure when the volatility of productivity follows an AR(1) process
-
----
-
 ### [StochasticGrowth_RegimeSwitching](StochasticGrowth_RegimeSwitching)
 MATLAB code for a **stochastic growth model with regime-switching volatility**.
 
