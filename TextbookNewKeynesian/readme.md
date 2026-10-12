@@ -50,11 +50,11 @@ Filter results remain available in the workspace as `fits`, with the comparison 
 
 - `demo.m`: main filtering demo.
 - `demo_data.mat`: original empirical dataset.
-- `helpers/nk_filter_tvkf.m`: standard and time-varying Kalman filters.
-- `helpers/nk_loglinear_coefficients.m`: log-linear solution.
-- `helpers/nk_log_tp_coef.m`: Taylor Projection solution.
-- `helpers/nk_nozlb_dp_coef.m` and the four `DP_nozlb_*`/`DPsolve_pi_noZLB.m` helpers: Dynamic Perturbation solution.
-- `helpers/nk_zlb_dp_coef.m` and the four `DP_zlb_*`/`DPsolve_pi_ZLB.m` helpers: Dynamic Perturbation solution with the zero lower bound.
+- `nk_filter_tvkf.m`: standard and time-varying Kalman filters.
+- `nk_loglinear_coefficients.m`: log-linear solution.
+- `nk_log_tp_coef.m`: Taylor Projection solution.
+- `nk_nozlb_dp_coef.m` and the four `DP_nozlb_*`/`DPsolve_pi_noZLB.m` helpers: Dynamic Perturbation solution.
+- `nk_zlb_dp_coef.m` and the four `DP_zlb_*`/`DPsolve_pi_ZLB.m` helpers: Dynamic Perturbation solution with the zero lower bound.
 
 ## Requirements
 
