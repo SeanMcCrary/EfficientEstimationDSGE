@@ -1,65 +1,75 @@
 # EfficientEstimationDSGE
 
-This repository contains MATLAB code accompanying the paper  
-**"Efficient Estimation of Nonlinear DSGE Models"**  
-by *Eva Janssens* and *Sean McCrary*.
+This repository contains MATLAB code accompanying the paper **“Efficient Estimation of Nonlinear DSGE Models”** by **Eva F. Janssens** and **Sean McCrary**.
 
-Each subdirectory implements a specific model with its own estimation or filtering routine. The general structure of the filtering procedure alternates between:
+The demos illustrate solution and filtering methods for nonlinear DSGE models using simulated and empirical data. They include Taylor Projection (TP) and Dynamic Perturbation (DP) combined with the time-varying Kalman filter (TVKF), alongside log-linear and global-solution benchmarks.
 
-1. **Solution Step**: Solves the model locally at the current state forecast.
-2. **Filtering Step**: Constructs state-space matrices consistent with the current local solution and performs a single step of the time-varying Kalman filter.
+Each model directory contains a `demo.m` script and a separate README with further details. These are demonstrations of the methodology proposed in the paper, not replication files.
 
-Each subdirectory contains a dedicated `README.md` with details on the model, data, and estimation or filtering demonstration. Note, these are not replication files, but demos based on the methodology proposed in the paper. 
-
-
-## 📁 Contents
-
-### [NKDMP](NKDMP)
-MATLAB code for full-information Bayesian estimation of the **New Keynesian Diamond-Mortensen-Pissarides (NKDMP)** model using a Random-Walk Metropolis-Hastings sampler.
-
-- Three policy variables: market tightness, inflation, marginal cost  
-- Five structural shocks: productivity, discount factor, monetary policy, matching efficiency, separation rate  
-- Estimation on U.S. data from 1966:Q1 to 2019:Q4  
-- Newton solver with symbolic equilibrium conditions
-
----
+## Contents
 
 ### [DMP](DMP)
-MATLAB code for estimating the **Diamond-Mortensen-Pissarides (DMP)** model.
 
-- Uses data simulated from the global solution as the data-generating process  
-- Benchmarks the computational performance of existing filters
-  
----
+A filtering comparison in the **Diamond–Mortensen–Pissarides (DMP)** search-and-matching model.
+
+One dataset is simulated from the global nonlinear solution and filtered using five methods:
+
+- Log-linear solution + Kalman filter (KF)
+- First-order Taylor Projection (TP1) + TVKF
+- First-order Dynamic Perturbation (DP1) + TVKF
+- Global solution + Extended Kalman Filter (EKF)
+- Global solution + particle filter (PF)
+
+The demo plots true and filtered productivity, market tightness, and wages, and reports normalized mean squared errors and runtimes.
 
 ### [TextbookNewKeynesian](TextbookNewKeynesian)
-MATLAB code for estimating the **standard three-equation New Keynesian model**.
 
-- Solves the textbook three-equation New Keynesian model  
-- Full-information Bayesian estimation using data from 1966:Q1 to 2007:Q4 
+A filtering illustration in the **standard three-equation New Keynesian model**, using quarterly U.S. output, inflation, and nominal interest-rate data from **1966Q1–2007Q4**.
 
----
+The demo loads `demo_data.mat` and applies four methods at a common fixed calibration: **log-linear + KF, TP1 + TVKF, DP1 + TVKF, and DP1-ZLB + TVKF**. The observed zero lower bound does not bind in this sample.
+
+It plots the filtered latent states and observed versus filtered variables, and reports log likelihoods and runtimes.
+
+### [NKDMP](NKDMP)
+
+A filtering illustration in the **New Keynesian Diamond–Mortensen–Pissarides (NKDMP)** model using two empirical samples:
+
+| Data file | Sample | Methods |
+| --- | --- | --- |
+| `demo_data_prezlb.mat` | 1984Q1–2007Q4 | Log-linear + KF, DP + TVKF, TP + TVKF |
+| `demo_data_zlb.mat` | 1984Q1–2019Q4 | DP-ZLB + TVKF |
+
+Both files contain seven observed series: GDP deflator inflation, CPI inflation, labor input measured using hours, market tightness, the nominal interest rate, the separation rate, and the job-finding rate.
+
+The demo uses fixed parameter values included in the data files and produces two figures comparing observed and filtered values of all seven variables. The three pre-ZLB methods share one parameter vector; the full sample uses a separate parameter vector. No estimation is performed.
 
 ### [StochasticGrowth_RegimeSwitching](StochasticGrowth_RegimeSwitching)
-MATLAB code for a **stochastic growth model with regime-switching volatility**.
 
-- Demonstrates the filtering procedure when productivity dynamics are determined by a discrete Markov process
+A **stochastic growth model with regime switching** in productivity persistence and volatility.
 
----
+The demo uses simulated data to illustrate filtering of latent states and regime probabilities. It combines regime-dependent Taylor Projection solutions with the Hamilton filter.
 
-## 🛠 Requirements
+## Quick Start
 
-- MATLAB R2024a or later  
-- Symbolic Math Toolbox  
-- Statistics and Machine Learning Toolbox
+Open the directory for the model you want to run and execute:
 
----
+```matlab
+demo
+```
 
-## 🔍 Contact
+See the README in that directory for details on its data, methods, and output.
 
-This is a work in progress. Code will be updated periodically.  
-For questions, suggestions, or concerns, feel free to reach out: mccrary.65 **at** osu.edu
+## Requirements
 
+- MATLAB R2025b
+- Optimization Toolbox for the DMP Taylor Projection solver
+- Statistics and Machine Learning Toolbox for demos using statistical functions
+- Symbolic Math Toolbox for generating symbolic model equations
 
+The textbook New Keynesian filtering demo runs in base MATLAB. Toolbox requirements vary across the other examples.
 
----
+## Contact
+
+This is a work in progress. Code will be updated periodically.
+
+For questions, suggestions, or concerns, contact: mccrary.65 **at** osu.edu
