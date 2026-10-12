@@ -1,46 +1,52 @@
-# NKDMP Model
+# NKDMP Filtering Demo
 
-This repository contains MATLAB code for full-information Bayesian estimation of the **New Keynesian Diamond-Mortensen-Pissarides (NKDMP)** model using a Random-Walk Metropolis-Hastings sampler.
+This directory contains MATLAB demo code for **“Efficient Estimation of Nonlinear DSGE Models”** by Eva F. Janssens and Sean McCrary.
 
-## Overview
+The demo illustrates filtering in a New Keynesian Diamond–Mortensen–Pissarides (NKDMP) model using two empirical samples. All parameters are fixed; the demo does not perform estimation.
 
-- The model includes three policy variables:
-  - **Market tightness**
-  - **Inflation**
-  - **Marginal cost**
-- And five structural shocks:
-  - **Productivity shock**
-  - **Discount factor shock**
-  - **Monetary policy shock**
-  - **Matching efficiency shock**
-  - **Separation rate shock**
-- Estimation is based on U.S. data for inflation, employment, market tightness, nominal interest rate, and job-finding rate, spanning 1966:Q1 to 2019:Q4.
-- Policy functions are computed using a Newton solver.
+## Samples and Methods
 
-## Files
+| Data file | Sample | Methods |
+| --- | --- | --- |
+| `demo_data_prezlb.mat` | 1984Q1–2007Q4 | Log-linear + KF, DP + TVKF, TP + TVKF |
+| `demo_data_zlb.mat` | 1984Q1–2019Q4 | DP-ZLB + TVKF |
 
-- `demo_estimation.m`, `demo_data.mat`  
-  Main script for running the estimation using the Random-Walk Metropolis-Hastings algorithm. Produces posterior draws and summary plots.
+KF denotes the Kalman filter, TVKF the time-varying Kalman filter, DP Dynamic Perturbation, and TP Taylor Projection. DP-ZLB incorporates the zero lower bound on the nominal interest rate.
 
-- `tpfilter_zlb.m`, `nk_zlb_tpcoef.m`  
-  Functions used to filter the data and compute policy function coefficients via the Newton solver.
+The three pre-ZLB methods use the same fixed parameter vector. The sample including the ZLB uses a separate fixed parameter vector from the saved full-sample results. Both parameter vectors are included in the data files.
 
-- `Res_eval_zlb.m`, `Jac_eval_zlb.m`  
-  Functions called by the Newton solver to evaluate residuals and Jacobians for the policy coefficients.
+## Quick Start
 
-- `NomR_zlb.m`, `NomR_dx_zlb.m`  
-  Functions called by the filter that output the linearized nominal interest rate.
+Run
 
-- `nkdmp_zlb_symbolic_equations.m`  
-  Symbolic script that constructs the model's equilibrium conditions and generates the functions:  
-  `Res_eval_zlb.m`, `Jac_eval_zlb.m`, `NomR_zlb.m`, and `NomR_dx_zlb.m`.
+```matlab
+demo
+```
 
-- `transformParamsInvME.m`, `transformParamsME.m`  
-  Functions for mapping between parameter vectors and structural parameters, enforcing constraints such as positivity of variances.
+from the main directory. The script automatically adds the `helpers/` directory and its subdirectories to the MATLAB path.
+
+## Data
+
+Each data file contains quarterly dates and seven observed series, used in the following order:
+
+1. GDP deflator inflation (`pi_obs`)
+2. CPI inflation (`pi_obs2`)
+3. Labor input, measured using hours (`n_obs`)
+4. Market tightness (`tg_obs`)
+5. Nominal interest rate (`r_obs`)
+6. Separation rate (`s_obs`)
+7. Job-finding rate (`jf_obs`)
+
+## Output
+
+The demo produces two figures, each showing observed and filtered values for all seven variables:
+
+- **Pre-ZLB sample:** log-linear, DP, and TP.
+- **Sample including the ZLB:** DP-ZLB.
+
+The figures display the series in 100 times their input log units. Filtered observables and state estimates remain available in the MATLAB workspace.
 
 ## Requirements
 
-- MATLAB (tested with R2024a)
-- Symbolic Math Toolbox
+- MATLAB R2025b
 - Statistics and Machine Learning Toolbox
-
